@@ -20,7 +20,51 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* @media screen and (max-width: 767px) { */
+#shopping-tab {
+    width: 100%;
+    z-index: 1030;
+    transition: 0.2s;
+}
+
+#store-nav .nav-link {
+    border-bottom: 3px solid transparent;
+}
+
+#store-nav .nav-link.active {
+    border-bottom: 3px solid var(--bs-warning);
+    color: var(--bs-warning);
+}
+
+@media screen and (min-width: 992px) {
+    #shopping-tab {
+        width: auto;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) translateX(75%);
+    }
+    #shopping-tab:hover {
+        transform: translateY(-50%);
+    }
+    #shopping-tab .nav-item.col:not(:last-child) .nav-link {
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+}
+@media screen and (min-width: 1260px) {
+    #shopping-tab {
+        transform: translateY(-50%);
+    }
+    #shopping-tab .nav-link > svg {
+        font-size: 1.5rem;
+    }
+
+    #shopping-tab .nav-link > .text {
+        font-size: 12px !important;
+    }
+
+    #shopping-tab .nav-link > .badge {
+        font-size: 10px !important;
+    }
+}
 @media screen and (max-width: 565px) {
     #main-nav {
         position: fixed !important;
@@ -137,6 +181,10 @@ h5.section-heading {
 .bg-darker {
     /* background-color: #313131 !important; */
     background-color: var(--bs-darker) !important;
+}
+
+.border-darker {
+    border-color: var(--bs-darker);
 }
 .card-banner .card-body,
 .heading-line .title-section {
