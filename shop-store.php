@@ -65,8 +65,8 @@ require_once __DIR__ . '/1_head.php';
                     </div>
                     <!-- <div class="col-auto mt-4"></div> -->
                     <div class="col-12">
-                        <nav id="store-nav" class="navbar navbar-expand border-top border-bottom border-dark p-0">
-                            <ul class="navbar-nav mx-auto">
+                        <nav id="store-nav" class="border-bottom border-dark border-top flex-nowrap navbar navbar-expand p-0 text-nowrap" style="margin: 0 -15px;">
+                            <ul class="mx-auto navbar-nav overflow-auto">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link p-3 link-light active">หน้าหลัก</a>
                                 </li>
