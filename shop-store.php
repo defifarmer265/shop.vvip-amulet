@@ -27,7 +27,7 @@ require_once __DIR__ . '/1_head.php';
     <?php require_once __DIR__ . '/_menu.php'; ?>
 
     <main id="main-frame" class="container-xl">
-        <section class="row pt-4 pb-5 gx-4 gy-5">
+        <section class="row py-5 gx-4 gy-5">
             <section class="mt-0">
                 <div id="headerCarousel" class="carousel slide" data-interval="false" data-ride="carousel" style="z-index: 0;">
                     <div class="carousel-inner">
