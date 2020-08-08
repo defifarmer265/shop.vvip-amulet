@@ -42,29 +42,34 @@ body {
         top: 50%;
         transform: translateY(-50%) translateX(75%);
     }
+
     #shopping-tab:hover {
         transform: translateY(-50%);
     }
+
     #shopping-tab .nav-item.col:not(:last-child) .nav-link {
-        border-top: 1px solid rgba(0,0,0,0.1);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 }
+
 @media screen and (min-width: 1260px) {
     #shopping-tab {
         transform: translateY(-50%);
     }
-    #shopping-tab .nav-link > svg {
+
+    #shopping-tab .nav-link>svg {
         font-size: 1.5rem;
     }
 
-    #shopping-tab .nav-link > .text {
+    #shopping-tab .nav-link>.text {
         font-size: 12px !important;
     }
 
-    #shopping-tab .nav-link > .badge {
+    #shopping-tab .nav-link>.badge {
         font-size: 10px !important;
     }
 }
+
 @media screen and (max-width: 565px) {
     #main-nav {
         position: fixed !important;
@@ -176,6 +181,7 @@ h5.section-heading {
     font-size: 10px;
     color: #777;
 }
+
 /* END Form Label Over Input */
 
 .bg-darker {
@@ -186,6 +192,7 @@ h5.section-heading {
 .border-darker {
     border-color: var(--bs-darker) !important;
 }
+
 .card-banner .card-body,
 .heading-line .title-section {
     z-index: 0;
@@ -277,41 +284,28 @@ h5.section-heading {
     border-color: white !important;
 }
 
-/* SlideOut.js */
-/* .slideout-menu {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 256px;
-    min-height: 100vh;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    z-index: 0;
-    display: none;
+/* Modal Sidebar */
+.modal.fade .modal-dialog.modal-dialog-sidebar {
+    transition: transform .3s ease-out;
+    transform: translate(50px, 0);
+}
+.modal.show .modal-dialog.modal-dialog-sidebar {
+    transform: none;
 }
 
-.slideout-menu-left {
-    left: 0;
+.modal-dialog.modal-dialog-sidebar {
+    max-width: 350px;
+    margin: 0 -18px 0 auto;
+    height: 100%;
 }
 
-.slideout-menu-right {
-    right: 0;
+.modal-dialog.modal-dialog-sidebar .modal-content {
+    height: 100%;
+    border-radius: 0;
 }
 
-.slideout-panel {
-    position: relative;
-    z-index: 1;
-    will-change: transform;
-    background-color: var(--bs-dark);
-    min-height: 100vh;
+@media screen and (max-width: 575px) {
+    .modal-dialog.modal-dialog-sidebar {
+        max-width: 256px;
+    }
 }
-
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
-    overflow: hidden;
-}
-
-.slideout-open .slideout-menu {
-    display: block;
-} */

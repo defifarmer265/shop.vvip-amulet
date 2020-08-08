@@ -13,7 +13,7 @@
     <nav class="navbar py-0 bg-white">
         <ul class="navbar-nav flex-row row gx-0 flex-lg-column-reverse">
             <li class="nav-item col">
-                <a href="#" class="nav-link d-flex flex-column justify-content-center align-items-center link-dark py-md-2 py-lg-3 border-right" style="padding: 7.5px 15px 5px;">
+                <a href="#user-menu" data-toggle="modal" class="nav-link d-flex flex-column justify-content-center align-items-center link-dark py-md-2 py-lg-3 border-right" style="padding: 7.5px 15px 5px;">
                     <i class="fas fa-bars"></i>
                     <span class="text" style="margin-top: 2px; font-size: 10px;">Menu</span>
                 </a>
@@ -125,7 +125,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div id="LoginRegister" class="overflow-auto">
                 <div class="collapse show" id="Intro" data-parent="#LoginRegister">
@@ -481,7 +480,32 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="user-menu" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-sidebar">
+        <div class="modal-content bg-dark border-left border-top-0 border-bottom-0 border-right-0 border-secondary">
+            <div class="d-flex justify-content-center mt-4">
+                <img src="//dummyimage.com/300x300" class="border border-secondary rounded-circle" alt="" style="height: 150px;width: 150px;margin-bottom: -40px;z-index: 1;/* filter: drop-shadow(0 0 0px black); */box-shadow: 0 0 0px 5px white;">
+            </div>
+            <div class="modal-body border-top border-secondary pt-5 flex-grow-0">
+                <h4 class="text-center mt-3">Tommy Dettmar</h4>
+                <h5 class="text-center"><span class="badge bg-warning text-body shadow-sm" style="background-image: linear-gradient(140deg, rgba(0,0,0,0.25), rgba(255,255,255,0.25));">Gold</span></h5>
+            </div>
+            <nav class="navbar flex-fill align-items-start p-0">
+                <ul class="navbar-nav w-100 mb-auto">
+                    <li class="nav-item"><a href="./" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-home mr-2"></i>หน้าแรก</a></li>
+                    <li class="nav-item"><a href="./shop.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-store mr-2"></i>ร้านค้า</a></li>
+                    <li class="nav-item"><a href="./news.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-newspaper mr-2"></i>ข่าวสาร</a></li>
+                    <li class="nav-item"><a href="./rules.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-exclamation-circle mr-2"></i>กฎระเบียบ</a></li>
+                    <li class="nav-item"><a href="./contact.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-phone mr-2"></i>ติดต่อ</a></li>
+                </ul>
+                <ul class="navbar-nav w-100 mt-auto">
+                    <li class="nav-item"><a href="#" class="nav-link btn btn-danger mb-0 px-4 px-sm-5"><i class="fas fa-sign-out-alt mr-2"></i>ออกจากระบบ</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -491,45 +515,22 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
 <script>
     function chooseRegisterLevel() {
         const select = event.target;
         const level = select.querySelector('option:checked').value;
         const additionalForm = document.getElementById('register-additional-form');
-        if (level !== 'normal') {
-            additionalForm.style.display = 'block';
-            additionalForm.querySelectorAll('input').forEach((el, index, arr) => el.disabled = false);
-            additionalForm.querySelectorAll('textarea').forEach((el, index, arr) => el.disabled = false);
-            additionalForm.querySelectorAll('select').forEach((el, index, arr) => el.disabled = false);
-        } else {
-            additionalForm.style.display = 'none';
-            additionalForm.querySelectorAll('input').forEach((el, index, arr) => el.disabled = true);
-            additionalForm.querySelectorAll('textarea').forEach((el, index, arr) => el.disabled = true);
-            additionalForm.querySelectorAll('select').forEach((el, index, arr) => el.disabled = true);
+        const tags = ['input', 'textarea', 'select'];
+        additionalForm.style.display = level !== 'normal' ? 'block' : 'none';
+        for (const input of tags) {
+            additionalForm
+                .querySelectorAll(input)
+                .forEach((el, index, arr) => el.disabled = level !== 'normal' ? false : true);
         }
     }
 </script>
 <script>
     const mainNav = document.getElementById('main-nav');
-    const mainNavCollapse = new bootstrap.Collapse(mainNav, {
-        toggle: false
-    });
-    // const slideout = new Slideout({
-    //     'panel': document.getElementById('main-frame'),
-    //     'menu': mainNav,
-    //     'padding': 256,
-    //     'tolerance': 70,
-    // });
-
-    const overlay = document.createElement('div');
-    overlay.className = 'modal-backdrop fade show';
-    const closeNavMenu = e => {
-        const isNav = !!e.target.closest('#main-nav');
-        overlay.style.display = 'block';
-        !document.body.contains(overlay) && document.body.appendChild(overlay);
-        if (isNav) return;
-        mainNavCollapse.hide();
-        overlay.style.display = 'none';
-    }
+    const mainNavCollapse = new bootstrap.Collapse(mainNav, { toggle: false });
+    const closeNavMenu = e => !!e.target.closest('#main-nav') || mainNavCollapse.hide();
 </script>

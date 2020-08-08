@@ -120,7 +120,7 @@ require_once __DIR__.'/1_head.php';
                     <div class="list-group list-group-flush" style="background-color: rgba(0,0,0,0.25);">
                         <a href="#" class="py-3 list-group-item border-darker list-group-item border-darker-action bg-transparent link-light d-flex">
                             <div class="mr-3">
-                                <img src="//dummyimage.com/200x300" alt="" style="width: 100px; height: 100px;">
+                                <img src="//dummyimage.com/200x300" class="hover-popup" alt="" style="width: 100px; height: 100px;">
                             </div>
                             <div>
                                 <p class="mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla porro unde quidem, laborum ipsa neque cum, fugit explicabo magni eos quod! Aut ipsa eum quos pariatur totam.</p>
@@ -129,7 +129,7 @@ require_once __DIR__.'/1_head.php';
                         </a>
                         <a href="#" class="py-3 list-group-item border-darker list-group-item border-darker-action bg-transparent link-light d-flex">
                             <div class="mr-3">
-                                <img src="//dummyimage.com/200x300" alt="" style="width: 100px; height: 100px;">
+                                <img src="//dummyimage.com/200x300" class="hover-popup" alt="" style="width: 100px; height: 100px;">
                             </div>
                             <div>
                                 <p class="mb-2">Nulla porro unde quidem, laborum ipsa neque cum, fugit explicabo magni eos quod! Aut ipsa eum quos pariatur totam.</p>
