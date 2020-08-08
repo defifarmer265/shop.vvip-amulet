@@ -162,7 +162,7 @@ require_once __DIR__.'/1_head.php';
                                             </div>
                                         </a>
                                         <a href="#" class="d-block card-title link-light text-decoration-none lh-base overflow-hidden" style="height: 50px;"><?= $names[array_rand($names)] ?></a>
-                                        <a href="#" class="d-block link-secondary small d-flex text-decoration-none align-items-center">
+                                        <a href="./shop-store.php" class="d-block link-secondary small d-flex text-decoration-none align-items-center">
                                             <i class="fas fa-store fa-sm mr-1"></i>
                                             <span>ชื่อร้านค้า</span>
                                         </a>

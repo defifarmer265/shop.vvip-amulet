@@ -184,7 +184,7 @@ h5.section-heading {
 }
 
 .border-darker {
-    border-color: var(--bs-darker);
+    border-color: var(--bs-darker) !important;
 }
 .card-banner .card-body,
 .heading-line .title-section {

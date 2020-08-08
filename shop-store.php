@@ -1,8 +1,8 @@
 <?php
 $pageHeader = [
-    'pageTitle' => '',
-    'pageDesc' => 'ซื้อขาย',
-    'url' => 'index.php',
+    'pageTitle' => 'อนุรักษ์พระเครื่อง',
+    'pageDesc' => 'ร้านอนุรักษ์พระเครื่อง โดย วรวุฒิ พิพัฒน์โรจนกมล',
+    'url' => 'shop-store.php',
     'breadcrumb' => [
         [
             'icon' => 'fa-home',
@@ -10,10 +10,17 @@ $pageHeader = [
             'text' => "หน้าแรก"
         ],
         [
-            'text' => "แทงหวยออนไลน์"
+            'icon' => 'fa-store',
+            'link' => './shop.php',
+            'text' => "ร้านค้า"
+        ],
+        [
+            'text' => 'อนุรักษ์พระเครื่อง'
         ]
     ]
 ];
+
+$page = $_GET['page'] ?? 'index';
 
 session_start();
 require_once __DIR__ . '/Tool/Connect.php';
@@ -64,64 +71,34 @@ require_once __DIR__ . '/1_head.php';
                         <h5 class="text-muted">วรวุฒิ พิพัฒน์โรจนกมล</h5>
                     </div>
                     <!-- <div class="col-auto mt-4"></div> -->
-                    <div class="col-12">
-                        <nav id="store-nav" class="border-bottom border-dark border-top flex-nowrap navbar navbar-expand p-0 text-nowrap" style="margin: 0 -15px;">
-                            <ul class="mx-auto navbar-nav overflow-auto">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link p-3 link-light active">หน้าหลัก</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link p-3 link-light">ข้อมูลร้านค้า</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link p-3 link-light">สินค้ามาใหม่</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link p-3 link-light">การชำระเงิน</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
             </section>
+            <div class="col-12 mt-0 sticky-top bg-darker" style="top: 57px; z-index: 1021;">
+                <nav id="store-nav" class="border-bottom border-dark border-top flex-nowrap navbar navbar-expand p-0 text-nowrap" style="margin: 0 -15px;">
+                    <ul class="mx-auto navbar-nav overflow-auto">
+                        <li class="nav-item">
+                            <a href="<?=$pageHeader['url']?>?page=index" class="nav-link p-3 link-light <?=$page === 'index' ? 'active' : ''?>">หน้าหลัก</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=$pageHeader['url']?>?page=info" class="nav-link p-3 link-light <?=$page === 'info' ? 'active' : ''?>">ข้อมูลร้านค้า</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=$pageHeader['url']?>?page=announce" class="nav-link p-3 link-light <?=$page === 'announce' ? 'active' : ''?>">ประกาศร้านค้า</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=$pageHeader['url']?>?page=products" class="nav-link p-3 link-light <?=$page === 'products' ? 'active' : ''?>">สินค้าทั้งหมด</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=$pageHeader['url']?>?page=payment" class="nav-link p-3 link-light <?=$page === 'payment' ? 'active' : ''?>">การชำระเงิน</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
-            <section id="sidebar" class="order-1 order-md-0 col-md-3 col-lg-3">
-                <aside class="card bg-transparent border-0" style="margin-top: 5px;">
-                    <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
-                        <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
-                            <span class="icon mr-2"><i class="fas fa-list text-white-50"></i></span>
-                            <span>หมวดหมู่พระ</span>
-                        </h3>
-                    </header>
-                    <div class="list-group list-group-flush" style="background-color: rgba(0,0,0,0.25);">
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light active" aria-current="true">Cras justo odio</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Morbi leo risus</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                    </div>
-                </aside>
-
-            </section>
-
-            <article class="order-0 order-md-1 col-md">
-
-                <section class="">
-                    <header class="section-heading mt-จ heading-line heading-line-high d-flex [align-items-center] justify-content-between">
-                        <div class="title-section bg-darker d-flex align-items-baseline">
-                            <div>
-                                <h4>พระเด่นประจำวัน</h4>
-                                <div class="text-muted blockquote-footer mt-1 font-weight-light mb-0">วันที่ <?= THdatetime(date('Y-m-d H:i:s')) ?></div>
-                            </div>
-                        </div>
-                        <a href="./shop.php" class="title-section btn btn-link bg-darker align-items-center d-flex mb-2 text-light text-decoration-none">ดูทั้งหมด</a>
-                    </header>
-
-                </section>
-            </article>
+            <?php 
+                if ($page === 'index')  include __DIR__.'/store/__storeIndex.php';
+                if ($page === 'info')   include __DIR__.'/store/__storeInfo.php';
+            ?>
 
         </section>
     </main>
