@@ -484,7 +484,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="user-menu" tabindex="-1" aria-hidden="true">
+<div class="modal fade pr-0" id="user-menu" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-sidebar">
         <div class="modal-content bg-dark border-left border-top-0 border-bottom-0 border-right-0 border-secondary">
             <div class="d-flex justify-content-center mt-4">
