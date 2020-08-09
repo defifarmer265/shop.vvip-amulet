@@ -4,7 +4,10 @@
             <div class="mr-2 my-auto">
                 <img src="//dummyimage.com/500x500" alt="Logo" class="rounded-circle" style="width: 40px;max-width: 90px;">
             </div>
-            <h1 class="ml-1 navbar-brand my-2">VVIP-Amulet Shop</h1>
+            <h1 class="d-inline-flex flex-column ml-1 my-2 navbar-brand pt-0">
+                <span>VVIP-Amulet Shop</span>
+                <span style="font-size: 12px;" class="font-weight-light text-white-50">ศูนย์รวมร้านพระออนไลน์ไทยอินเตอร์</span>
+            </h1>
         </a>
         <div class="ml-auto">
             <button class="navbar-toggler border-0 shadow-none" onclick="document.body.addEventListener('click', closeNavMenu);" type="button" data-toggle="collapse" data-target="#main-nav">

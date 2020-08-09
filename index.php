@@ -41,7 +41,7 @@ $dummyCategories = ["พระบูชา", "พระกรุ", "เหรี
                             <input type="hidden" name="category" value="<?= $_GET['category'] ?>">
                         <?php endif; ?>
                         <div class="input-group">
-                            <input id="store-search-input" type="search" value='<?= isset($_GET['search']) ? $_GET['search'] : '' ?>' name="search" class="form-control" placeholder="ค้นหาในร้านค้า" style="border-radius: 100px 0 0 100px;">
+                            <input id="store-search-input" type="search" value='<?= isset($_GET['search']) ? $_GET['search'] : '' ?>' name="search" class="form-control" placeholder="ค้นหา" style="border-radius: 100px 0 0 100px;">
                             <button class="btn btn-dark" type="submit" style="border-radius: 0 100px 100px 0;"><i class="fas fa-search"></i></button>
                         </div>
                     </form>
