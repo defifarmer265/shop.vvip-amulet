@@ -1,17 +1,13 @@
 <?php
 $pageHeader = [
     'pageTitle' => '',
-    'pageDesc' => 'ซื้อขาย',
+    'pageDesc' => 'ศูนย์รวมร้านพระออนไลน์มาตรฐานชมรมพระเครื่องไทยอินเตอร์',
     'url' => 'index.php',
     'breadcrumb' => [
         [
             'icon' => 'fa-home',
-            'link' => './',
             'text' => "หน้าแรก"
         ],
-        [
-            'text' => "แทงหวยออนไลน์"
-        ]
     ]
 ];
 
@@ -75,7 +71,7 @@ $dummyCategories = ["พระบูชา", "พระกรุ", "เหรี
                     </aside>
                 </section>
 
-                <aside class="card bg-transparent border-0" style="margin-top: 5px;">
+                <aside class="card bg-transparent border-0 d-none d-md-block" style="margin-top: 5px;">
                     <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
                         <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
                             <span class="icon mr-2"><i class="fas fa-list text-white-50"></i></span>
