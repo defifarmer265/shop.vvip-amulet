@@ -8,7 +8,6 @@
 
 body {
     font-family: 'Sarabun', var(--bs-font-sans-serif);
-    transition: .2s;
 }
 
 /* fix modal-dialog-scrollable */
@@ -17,14 +16,26 @@ body {
     overflow: auto;
 }
 
-#main-nav .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
+#menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(45deg, var(--bs-dark), var(--bs-secondary), var(--bs-dark));
 }
 
-#shopping-tab {
+#web-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    z-index: 1030;
-    transition: 0.2s;
+    height: 1px;
+    background: linear-gradient(45deg, var(--bs-dark), var(--bs-secondary), var(--bs-dark));
+}
+
+#main-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #store-nav .nav-link {
@@ -34,6 +45,12 @@ body {
 #store-nav .nav-link.active {
     border-bottom: 3px solid var(--bs-warning);
     color: var(--bs-warning);
+}
+
+#shopping-tab {
+    width: 100%;
+    z-index: 1030;
+    transition: 0.2s;
 }
 
 @media screen and (min-width: 992px) {
@@ -71,9 +88,11 @@ body {
     }
 
 }
+
 #shopping-tab .hidden-chevron {
     display: none;
 }
+
 @media screen and (min-width: 992px) and (max-width: 1260px) {
     #shopping-tab .hidden-chevron {
         display: flex;
@@ -312,6 +331,7 @@ h5.section-heading {
     /* transition: transform .3s ease-out; */
     transform: translate(50px, 0);
 }
+
 .modal.show .modal-dialog.modal-dialog-sidebar {
     transform: none;
 }
@@ -332,22 +352,27 @@ h5.section-heading {
         max-width: 256px;
     }
 }
+
 /* END Modal Sidebar */
 
 /* Shop store */
 #store-announce-container {
     max-height: 400px;
 }
-#store-announce-container ~ a::before {
+
+#store-announce-container~a::before {
     content: 'อ่านเพิ่ม';
 }
+
 #store-announce-container.show-all {
     max-height: 100%;
 }
-#store-announce-container.show-all ~ a::before {
+
+#store-announce-container.show-all~a::before {
     content: 'น้อยลง';
 }
-#store-announce-container:not([class*='show-all']) > #store-announce::before {
+
+#store-announce-container:not([class*='show-all'])>#store-announce::before {
     content: '';
     width: 100%;
     height: 100%;

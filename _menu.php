@@ -1,4 +1,4 @@
-<nav id="menu" class="navbar py-0 navbar-expand-sm navbar-dark border-bottom sticky-top" data-old-style="background-color: rgba(0,0,0,0.25);" style="z-index: 1022; height: 57px; background: linear-gradient(170deg, #1d2023, #3b4046);">
+<nav id="menu" class="navbar py-0 navbar-expand-sm navbar-dark sticky-top" data-old-style="background-color: rgba(0,0,0,0.25);" style="z-index: 1022; height: 57px; background: linear-gradient(170deg, #1d2023, #3b4046);">
     <div class="container-xl position-relative">
         <a href="./" class="text-decoration-none link-light d-flex d-sm-none">
             <div class="mr-2 my-auto">

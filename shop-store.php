@@ -75,7 +75,7 @@ $dummyCategories = ["พระบูชา", "พระกรุ", "เหรี
                     <!-- <div class="col-auto mt-4"></div> -->
                 </div>
             </section>
-            <div class="col-12 mt-0 sticky-top bg-darker" style="top: 57px; z-index: 1021;">
+            <div class="col-12 mt-0 sticky-top bg-darker" style="top: 56px; z-index: 1021;">
                 <nav id="store-nav" class="border-bottom border-dark border-top flex-nowrap navbar navbar-expand p-0 text-nowrap" style="margin: 0 -15px;">
                     <ul class="mx-auto navbar-nav overflow-auto">
                         <li class="nav-item">

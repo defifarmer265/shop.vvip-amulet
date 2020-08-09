@@ -488,6 +488,7 @@
     </div>
 </div>
 
+<!-- User menu -->
 <div class="modal fade pr-0" id="user-menu" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-sidebar">
         <div class="modal-content bg-dark border-left border-top-0 border-bottom-0 border-right-0 border-secondary">
@@ -514,6 +515,27 @@
     </div>
 </div>
 
+<!-- Forgot password -->
+<div class="modal fade" id="ForgotPassword" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog modal-dialog-centered">
+		<form id="ForgotPasswordForm" role="form" method="POST" class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title text-body">Forgot your password</h5>
+				<button class="close" data-dismiss="modal" data-toggle="modal" data-target="#welcomedialog">×</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label>อีเมล :</label>
+					<input type="email" class="form-control" required="" name="email" placeholder="">
+					<p class="text-muted text-right mt-1">กรอกอีเมล์ของคุณ ระบบจะส่งข้อมูลไปให้ทางอีเมล์</p>
+				</div>
+			</div>
+			<div class="modal-footer text-center">
+				<button class="btn btn-primary" type="submit">submit</button>
+			</div>
+		</form>
+	</div>
+</div>
 <!-- Optional JavaScript -->
 <!-- Popper.js first, then Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

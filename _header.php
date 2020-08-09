@@ -5,16 +5,15 @@
         </div>
     </div>
 </div>
-<header class="d-none d-sm-block border-bottom">
+<header id="web-header" class="d-none d-sm-block position-relative">
     <div class="container-xl d-flex [align-items-start] p-3 py-4 p-sm-5">
         <!-- <img src="//dummyimage.com/500x500" alt="Logo" class="mt-2 mr-4 rounded-circle" style="width: 25vw; max-width: 145px;"> -->
         <div class="mr-4">
             <img src="//dummyimage.com/500x500" alt="Logo" class="rounded-circle" style="width: 25vw; max-width: 90px;">
         </div>
         <div class="mr-4">
-            <h1 class="font-weight-bold">VVIP-Amulet <span class="font-weight-light small">Shop</span></h1>
-            <p class="lead mb-0">ศูนย์รวมร้านพระออนไลน์มาตรฐานชมรมพระเครื่องไทยอินเตอร์</p>
-            <!-- <hr class="bg-secondary"> -->
+            <h1 class="font-weight-bold" style="text-shadow: 2px 2px 3px black;">VVIP-Amulet <span class="font-weight-light small">Shop</span></h1>
+            <p class="lead mb-0" style="text-shadow: 2px 2px 2px black;">ศูนย์รวมร้านพระออนไลน์มาตรฐานชมรมพระเครื่องไทยอินเตอร์</p>
         </div>
         <div class="flex-fill text-right d-flex align-items-end">
             <div class="row g-0 justify-content-end">

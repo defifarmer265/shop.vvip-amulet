@@ -157,7 +157,7 @@ $dummyCategories = ["พระบูชา", "พระกรุ", "เหรี
                     <div class="list-group list-group-flush rounded-lg shadow-sm" style="background-color: rgba(0,0,0,0.25);">
                         <a href="#" class="py-3 list-group-item border-darker list-group-item border-darker-action bg-transparent link-light d-flex">
                             <div class="mr-3">
-                                <img src="//dummyimage.com/200x300" class="hover-popup" alt="" style="width: 100px; height: 100px;">
+                                <img src="//dummyimage.com/200x300" class="hover-popup rounded-lg" alt="" style="width: 100px; height: 100px;">
                             </div>
                             <div>
                                 <p class="mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla porro unde quidem, laborum ipsa neque cum, fugit explicabo magni eos quod! Aut ipsa eum quos pariatur totam.</p>
@@ -166,7 +166,7 @@ $dummyCategories = ["พระบูชา", "พระกรุ", "เหรี
                         </a>
                         <a href="#" class="py-3 list-group-item border-darker list-group-item border-darker-action bg-transparent link-light d-flex">
                             <div class="mr-3">
-                                <img src="//dummyimage.com/200x300" class="hover-popup" alt="" style="width: 100px; height: 100px;">
+                                <img src="//dummyimage.com/200x300" class="hover-popup rounded-lg" alt="" style="width: 100px; height: 100px;">
                             </div>
                             <div>
                                 <p class="mb-2">Nulla porro unde quidem, laborum ipsa neque cum, fugit explicabo magni eos quod! Aut ipsa eum quos pariatur totam.</p>
@@ -176,6 +176,7 @@ $dummyCategories = ["พระบูชา", "พระกรุ", "เหรี
                     </div>
                 </section>
 
+                <!-- For Mobile -->
                 <section class="for-mobile d-md-none mb-5">
                     <aside class="card bg-transparent border-0">
                         <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
