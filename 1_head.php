@@ -11,5 +11,5 @@
     <link href="assets/css/style.css?v=<?= time() ?>" rel="stylesheet">
     <link rel="stylesheet" href="//cer-pra.com/assets/flag-icon-css-master/css/flag-icon.min.css">
 
-    <title><?= isset($pageHeader['pageTitle']) ? $pageHeader['pageTitle'] . ' ::' : '' ?> VVIP-Amulet Shop</title>
+    <title><?= isset($pageHeader['pageTitle']) ? $pageHeader['pageTitle'] . ' ::' : '' ?> VVIP-Amulet Shop - ศูนย์รวมร้านพระออนไลน์มาตรฐานชมรมพระเครื่องไทยอินเตอร์</title>
 </head>

@@ -5,7 +5,7 @@
                 <img src="//dummyimage.com/500x500" alt="Logo" class="rounded-circle" style="width: 40px;max-width: 90px;">
             </div>
             <h1 class="d-inline-flex flex-column ml-1 my-2 navbar-brand pt-0">
-                <span>VVIP-Amulet Shop</span>
+                <span class="font-weight-bold">VVIP-Amulet <span class="font-weight-light small">Shop</span></span>
                 <span style="font-size: 12px;" class="font-weight-light text-white-50">ศูนย์รวมร้านพระออนไลน์ไทยอินเตอร์</span>
             </h1>
         </a>
@@ -19,7 +19,7 @@
                 <li class="d-sm-none">
                     <header class="align-items-center d-flex heading-line mb-4 section-heading mt-0">
                         <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
-                            <span>VVIP-Amulet Shop</span>
+                            <span class="font-weight-bold">VVIP-Amulet <span class="font-weight-light small">Shop</span></span>
                         </h3>
                     </header>
                 </li>
