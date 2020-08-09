@@ -1,3 +1,10 @@
+<div id="loader" class="position-fixed h-100 w-100" style="z-index: 9999; background: rgba(0,0,0,0.75);">
+    <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+        <div class="spinner-border text-white" style="width: 3rem; height: 3rem;">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>
 <header class="d-none d-sm-block border-bottom">
     <div class="container-xl d-flex [align-items-start] p-3 py-4 p-sm-5">
         <!-- <img src="//dummyimage.com/500x500" alt="Logo" class="mt-2 mr-4 rounded-circle" style="width: 25vw; max-width: 145px;"> -->

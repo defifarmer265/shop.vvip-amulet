@@ -19,17 +19,62 @@ session_start();
 require_once __DIR__ . '/Tool/Connect.php';
 require_once __DIR__ . '/Tool/function.php';
 
-require_once __DIR__.'/1_head.php';
+require_once __DIR__ . '/1_head.php';
+
+$dummyCategories = ["พระบูชา", "พระกรุ", "เหรียญพระพุทธ", "พระคณาจารย์", "พระสมเด็จ", "พระปิดตา", "พระกริ่ง", "พระนางพญา", "พระขุนแผน", "แม่นางกวัก", "พระสังกัจจายน์", "พระพุทธชินราช", "กวนอิม", "พระพรหม", "พระหลวงปู่ทวด", "หลวงพ่อคูณ", "ฤาษี", "กุมารทอง", "เครื่องรางทั่วไป", "ผ้ายันต์-ตะกรุด", "สีผึ้ง", "จตุคามรามเทพ", "หนังสืออุปกรณ์พระ", "หลวงปู่นน"];
+
 ?>
 
 <body class="bg-darker text-white">
-    <?php require_once __DIR__.'/_header.php'; ?>
-    <?php require_once __DIR__.'/_menu.php'; ?>
+    <?php require_once __DIR__ . '/_header.php'; ?>
+    <?php require_once __DIR__ . '/_menu.php'; ?>
 
     <main id="main-frame" class="container-xl">
         <section class="row py-5 g-4">
+            <!-- For Mobile -->
+            <section class="for-mobile d-md-none mt-0">
+                <aside class="mb-4">
+                    <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
+                        <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
+                            <span class="icon mr-2"><i class="fas fa-search text-white-50"></i></span>
+                            <span>ค้นหา</span>
+                        </h3>
+                    </header>
+                    <form id="store-search">
+                        <?php if (isset($_GET['category']) && !empty($_GET['category'])) : ?>
+                            <input type="hidden" name="category" value="<?= $_GET['category'] ?>">
+                        <?php endif; ?>
+                        <div class="input-group">
+                            <input id="store-search-input" type="search" value='<?= isset($_GET['search']) ? $_GET['search'] : '' ?>' name="search" class="form-control" placeholder="ค้นหาในร้านค้า" style="border-radius: 100px 0 0 100px;">
+                            <button class="btn btn-dark" type="submit" style="border-radius: 0 100px 100px 0;"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </aside>
+            </section>
 
             <section id="sidebar" class="order-1 order-md-0 col-md-3 col-lg-3">
+
+                <!-- For PC -->
+                <section class="for-pc d-none d-md-block mt-0">
+                    <aside class="mb-4">
+                        <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
+                            <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
+                                <span class="icon mr-2"><i class="fas fa-search text-white-50"></i></span>
+                                <span>ค้นหา</span>
+                            </h3>
+                        </header>
+                        <form id="store-search">
+                            <?php if (isset($_GET['category']) && !empty($_GET['category'])) : ?>
+                                <input type="hidden" name="category" value="<?= $_GET['category'] ?>">
+                            <?php endif; ?>
+                            <div class="input-group">
+                                <input id="store-search-input" type="search" value='<?= isset($_GET['search']) ? $_GET['search'] : '' ?>' name="search" class="form-control" placeholder="ค้นหา" style="border-radius: 100px 0 0 100px;">
+                                <button class="btn btn-dark" type="submit" style="border-radius: 0 100px 100px 0;"><i class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </aside>
+                </section>
+
                 <aside class="card bg-transparent border-0" style="margin-top: 5px;">
                     <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
                         <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
@@ -38,18 +83,14 @@ require_once __DIR__.'/1_head.php';
                         </h3>
                     </header>
                     <div class="list-group list-group-flush" style="background-color: rgba(0,0,0,0.25);">
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light active" aria-current="true">Cras justo odio</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Morbi leo risus</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light">Porta ac consectetur ac</a>
+                        <a href="./" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light <?= isset($_GET['category']) ? (empty($_GET['category']) ? 'active' : '') : 'active' ?>" aria-current="true">ทั้งหมด</a>
+                        <?php foreach ($dummyCategories as $cat) : ?>
+                            <a href="./category=<?= $cat ?>" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light <?= isset($_GET['category']) ? ($_GET['category'] === $cat ? 'active' : '') : '' ?>"><?= $cat ?></a>
+                        <?php endforeach; ?>
                     </div>
                 </aside>
 
-                <aside class="mt-5 card bg-transparent border-0">
+                <aside class="mt-md-5 card bg-transparent border-0">
                     <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
                         <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
                             <span class="icon mr-2"><i class="fas fa-store text-white-50"></i></span>
@@ -138,7 +179,30 @@ require_once __DIR__.'/1_head.php';
                         </a>
                     </div>
                 </section>
-                
+
+                <section class="for-mobile d-md-none mb-5">
+                    <aside class="card bg-transparent border-0">
+                        <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
+                            <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
+                                <span class="icon mr-2"><i class="fas fa-list text-white-50"></i></span>
+                                <span>หมวดหมู่พระ</span>
+                            </h3>
+                        </header>
+                        <div class="d-none d-md-block list-group list-group-flush" style="background-color: rgba(0,0,0,0.25);">
+                            <a href="./<?= $pageHeader['url'] ?>?page=products" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light <?= isset($_GET['category']) ? (empty($_GET['category']) ? 'active' : '') : 'active' ?>" aria-current="true">ทั้งหมด</a>
+                            <?php foreach ($dummyCategories as $cat) : ?>
+                                <a href="./<?= $pageHeader['url'] ?>?page=products&category=<?= $cat ?>" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light <?= isset($_GET['category']) ? ($_GET['category'] === $cat ? 'active' : '') : '' ?>"><?= $cat ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                        <select id="select-category" onchange="location.href = `./<?= $pageHeader['url'] ?>?page=products${this.value !== '' ? `&category=${this.value}` : ''}`;" class="form-select d-md-none">
+                            <option value>ทั้งหมด</option>
+                            <?php foreach ($dummyCategories as $cat) : ?>
+                                <option <?= isset($_GET['category']) ? ($_GET['category'] === $cat ? 'selected' : '') : '' ?>><?= $cat ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </aside>
+                </section>
+
                 <section class="mb-5">
                     <header class="section-heading mt-0 heading-line heading-line-high d-flex [align-items-center] justify-content-between">
                         <div class="title-section bg-darker d-flex align-items-baseline">
@@ -176,7 +240,7 @@ require_once __DIR__.'/1_head.php';
                         <?php endfor; ?>
                     </div>
                 </section>
-                
+
                 <section class="mb-5">
                     <header class="section-heading mt-0 heading-line heading-line-high d-flex [align-items-center] justify-content-between">
                         <div class="title-section bg-darker d-flex align-items-baseline">
@@ -219,7 +283,7 @@ require_once __DIR__.'/1_head.php';
         </section>
     </main>
 
-    <?php require_once __DIR__.'/2_foot.php'; ?>
+    <?php require_once __DIR__ . '/2_foot.php'; ?>
 </body>
 
 </html>

@@ -1,8 +1,11 @@
 <nav id="menu" class="navbar py-0 navbar-expand-sm navbar-dark border-bottom sticky-top" data-old-style="background-color: rgba(0,0,0,0.25);" style="z-index: 1022; height: 57px; background: linear-gradient(170deg, #1d2023, #3b4046);">
     <div class="container-xl position-relative">
-        <div class="d-sm-none">
-            <h1 class="navbar-brand my-2">VVIP-Amulet Shop</h1>
-        </div>
+        <a href="./" class="text-decoration-none link-light d-flex d-sm-none">
+            <div class="mr-2 my-auto">
+                <img src="//dummyimage.com/500x500" alt="Logo" class="rounded-circle" style="width: 40px;max-width: 90px;">
+            </div>
+            <h1 class="ml-1 navbar-brand my-2">VVIP-Amulet Shop</h1>
+        </a>
         <div class="ml-auto">
             <button class="navbar-toggler border-0 shadow-none" onclick="document.body.addEventListener('click', closeNavMenu);" type="button" data-toggle="collapse" data-target="#main-nav">
                 <span class="navbar-toggler-icon"></span>
@@ -31,9 +34,9 @@
                 <li class="nav-item">
                     <a href="#select-lang-dialog" data-toggle="modal" class="nav-link p-3" title="ภาษา"><i class="fas fa-globe-asia mr-2 mr-lg-0 mr-xl-2"></i><span class="d-md-none d-xl-inline-block">ภาษา</span></a>
                 </li>
-                <li class="nav-item d-flex">
+                <!-- <li class="nav-item d-flex">
                     <a href="#search-dialog" data-toggle="modal" class="btn btn-block btn-outline-light border-0 my-auto d-none d-md-inline-block"><i class="fas fa-search mr-2 mr-sm-0"></i><span class="d-sm-none">ค้นหา</span></a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

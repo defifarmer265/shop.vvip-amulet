@@ -1,4 +1,4 @@
-<footer class="bg-darker text-white mb-4 mb-md-0" style="margin-top: 100px;">
+<footer class="bg-darker text-white mb-4 mb-md-0 mt-5" style="/* margin-top: 100px; */">
     <div class="container-xl container-xl d-flex justify-content-center px-2 px-lg-0 px-sm-55">
         <div class="bg-secondary mx-1 mx-auto mx-sm-3 mx-xl-0 position-relative px-2 px-sm-5 py-2 row shadow-lg" style="top: -20px; max-width: 500px;">
             <div class="col-12">
@@ -9,6 +9,7 @@
     </div>
 </footer>
 
+<!-- Shopping Tab -->
 <footer id="shopping-tab" class="position-fixed d-md-table" style="bottom: 0; box-shadow: 0 -5px 10px rgba(0,0,0,0.1);">
     <span class="hidden-chevron text-dark py-3 rounded-left align-items-center justify-content-center">
         <i class="fas fa-chevron-left"></i>
@@ -534,6 +535,31 @@
 </script>
 <script>
     const mainNav = document.getElementById('main-nav');
-    const mainNavCollapse = new bootstrap.Collapse(mainNav, { toggle: false });
+    const mainNavCollapse = new bootstrap.Collapse(mainNav, {
+        toggle: false
+    });
     const closeNavMenu = e => !!e.target.closest('#main-nav') || mainNavCollapse.hide();
+
+    const fadeOut = (el, speed = 500) => new Promise((resolve, reject) => {
+        const speedText = +speed / 1000 + 's';
+        el.style.transition = speedText;
+        el.style.opacity = 0;
+        setTimeout(() => { el.style.display = 'none'; resolve(el) }, speed);
+    });
+
+    const fadeIn = (el, speed = 500) => new Promise((resolve, reject) => {
+        const speedText = +speed / 1000 + 's';
+        el.style.display = '';
+        el.style.transition ? el.style.transition = speedText : null; 
+        setTimeout(() => (el.style.opacity = 1), 1);
+        setTimeout(() => resolve(el), speed);
+    });
+
+    window.onload = () => fadeOut(document.getElementById('loader'));
+    window.onbeforeunload = () => { 
+        const loader = document.getElementById('loader');
+        loader.style.display = '';
+        loader.style.transition = '';
+        loader.style.opacity = 1;
+    };
 </script>
