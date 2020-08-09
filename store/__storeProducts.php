@@ -1,4 +1,4 @@
-<section id="sidebar" class="order-1 order-md-0 col-md-3 col-lg-3">
+<section id="sidebar" class="col-md-3 col-lg-3">
     <div class="h-100 sticky-top" style="top: 117px;">
         <aside class="mb-5">
             <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
@@ -8,45 +8,15 @@
                 </h3>
             </header>
             <form id="store-search">
+                <input type="hidden" name="page" value="<?= $page ?>">
+                <?php if (isset($_GET['category']) && !empty($_GET['category'])) : ?>
+                <input type="hidden" name="category" value="<?= $_GET['category'] ?>">
+                <?php endif; ?>
                 <div class="input-group">
-                    <input id="store-search-input" type="search" name="search" class="form-control" placeholder="ค้นหาในร้านค้า" style="border-radius: 100px 0 0 100px;">
+                    <input id="store-search-input" type="search" value='<?=isset($_GET['search']) ? $_GET['search'] : ''?>' name="search" class="form-control" placeholder="ค้นหาในร้านค้า" style="border-radius: 100px 0 0 100px;">
                     <button class="btn btn-dark" type="submit" style="border-radius: 0 100px 100px 0;"><i class="fas fa-search"></i></button>
                 </div>
             </form>
-        </aside>
-
-        <aside class="mb-5">
-            <header class="section-heading mb-3 heading-line d-flex align-items-center justify-content-between">
-                <h3 class="align-items-center bg-darker d-flex h5 mb-0 title-section">
-                    <span class="icon mr-2"><i class="fas fa-search text-white-50"></i></span>
-                    <span>เกี่ยวกับ</span>
-                </h3>
-            </header>
-            <div class="card border-0 shadow-sm" style="background-color: rgba(0,0,0,0.25);">
-                <ul class="list-group list-group-flush bg-transparent">
-                    <li class="list-group-item bg-transparent py-4 border-darker">
-                        <h5 class="card-title mb-3">อนุรักษ์พระเครื่อง</h5>
-                        <span class="font-weight-light">พระแท้ ตามมาตรฐานสากล สวย ดูง่าย ราคาขึ้นกับสภาพ
-                            รับประกันพระแท้ทุกองค์ รับประกันความพอใจ</span>
-                    </li>
-                    <li class="list-group-item d-flex bg-transparent py-3 justify-content-between border-darker">
-                        <div class="text-nowrap text-white-50 mr-2">รหัสร้านค้า:</div>
-                        <div class="text-right font-weight-light">35732</div>
-                    </li>
-                    <li class="list-group-item d-flex bg-transparent py-3 justify-content-between border-darker">
-                        <div class="text-nowrap text-white-50 mr-2">จำนวนผู้เข้าชม:</div>
-                        <div class="text-right font-weight-light">39,302</div>
-                    </li>
-                    <li class="list-group-item d-flex bg-transparent py-3 justify-content-between border-darker">
-                        <div class="text-nowrap text-white-50 mr-2">ที่อยู่:</div>
-                        <div class="text-right font-weight-light">ถ.อุปราช ต.ในเมือง อ.เมือง จ.อุบลราชธานี 34000</div>
-                    </li>
-                    <li class="list-group-item d-flex bg-transparent py-3 justify-content-between border-darker">
-                        <div class="text-nowrap text-white-50 mr-2">ติดต่อ:</div>
-                        <div class="text-right font-weight-light">0909755228 วุฒิ / 086-4600268 เกรียงศักดิ์</div>
-                    </li>
-                </ul>
-            </div>
         </aside>
 
         <aside class="card bg-transparent border-0">
@@ -56,113 +26,23 @@
                     <span>หมวดหมู่พระ</span>
                 </h3>
             </header>
-            <div class="list-group list-group-flush" style="background-color: rgba(0,0,0,0.25);">
-                <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light active" aria-current="true">ทั้งหมด</a>
+            <div class="d-none d-md-block list-group list-group-flush" style="background-color: rgba(0,0,0,0.25);">
+                <a href="./<?=$pageHeader['url']?>?page=products" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light <?=isset($_GET['category']) ? (empty($_GET['category']) ? 'active' : '') : 'active'?>" aria-current="true">ทั้งหมด</a>
                 <?php foreach ($dummyCategories as $cat) : ?>
-                    <a href="#" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light"><?= $cat ?></a>
+                    <a href="./<?=$pageHeader['url']?>?page=products&category=<?=$cat?>" class="list-group-item border-darker list-group-item border-darker-action bg-transparent link-light <?=isset($_GET['category']) ? ($_GET['category'] === $cat ? 'active' : '') : ''?>"><?= $cat ?></a>
                 <?php endforeach; ?>
             </div>
+            <select id="select-category" onchange="location.href = `./<?=$pageHeader['url']?>?page=products${this.value !== '' ? `&category=${this.value}` : ''}`;" class="form-select d-md-none">
+                <option value>ทั้งหมด</option>
+                <?php foreach ($dummyCategories as $cat) : ?>
+                    <option <?=isset($_GET['category']) ? ($_GET['category'] === $cat ? 'selected' : '') : ''?>><?= $cat ?></option>
+                <?php endforeach; ?>
+            </select>
         </aside>
     </div>
 </section>
 
-<article class="order-0 order-md-1 col-md">
-
-    <section class="mb-5">
-        <header class="section-heading mt-จ heading-line heading-line-high d-flex [align-items-center] justify-content-between">
-            <div class="title-section bg-darker d-flex align-items-baseline">
-                <div>
-                    <h4 class="mt-1">ประกาศร้าน</h4>
-                    <!-- <div class="text-muted blockquote-footer mt-1 font-weight-light mb-0">วันที่ 9 ส.ค. 2563, 11:24 น.</div> -->
-                </div>
-            </div>
-            <a href="./shop-store.php?page=announce" class="title-section btn btn-link bg-darker align-items-center d-flex mb-2 text-light text-decoration-none">ดูทั้งหมด</a>
-        </header>
-        <div id="store-announce-container" class="border-0 card overflow-hidden rounded-0 rounded-top shadow-sm short" style="background-color: rgba(0,0,0,0.25);">
-            <div id="store-announce" class="card-body">
-                <div style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                    <span style="font-size:26px;">
-                        <span style="color: rgb(255, 255, 0);">
-                            <font face="Trebuchet MS, Helvetica">ชื่นชมพุทธศิลป์ ศรัทธาพุทธานุภาพ</font>
-                        </span>
-                    </span>
-                </div>
-                <div>&nbsp;</div>
-                <div>&nbsp;</div>
-                <div>&nbsp;</div>
-                <div>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        <span style="font-size:20px;"><span style="font-family: 'Comic Sans MS';"><span style="color: rgb(255, 0, 0);">ยินดีต้อนรับนักสะสมพระเครื่องทุกท่าน</span></span></span>
-                    </p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        <span style="font-size:20px;"><span style="font-family: 'Comic Sans MS';"><span style="color: rgb(255, 0, 0);">พระทุกองค์ของผมคัดเฉพาะพระแท้ ดูง่าย สบายตา
-                                    เป็นพระเครื่องพิมพ์นิยม ตามหลักสากล</span></span></span></p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        <span style="font-size:20px;"><span style="font-family: 'Comic Sans MS';"><span style="color: rgb(255, 0, 0);">และผ่านการพิจารณาจากผู้เชี่ยวชาญแต่ละสายมาแล้วอย่างละเอียด
-                                </span></span></span></p>
-                    <h2 style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        &nbsp;</h2>
-                    <h2 style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        &nbsp;</h2>
-                    <h2 style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        <span style="font-family: 'Comic Sans MS'; "><span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); "><u>รายละเอียดการรับประกัน</u></span></span></span></span>
-                    </h2>
-                    <h2 style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        <span style="font-family: Verdana; ">
-                            <span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); ">1.</span></span></span></span><span style="font-family: 'Comic Sans MS'; "><span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); ">
-                                        รับประกันพระแท้ไม่จำกัดระยะเวลา หากพบว่า</span></span></span></span><span style="font-family: 'Comic Sans MS'; "><span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); ">สมาคมผู้นิยมพระเครื่องพระบูชาไทย<br>
-                                        ไม่ออกใบรับรองพระแท้ หรือส่งพระประกวดแล้วกรรมการไม่รับตัดสิน<br>
-                                        คืนเงินสด เต็มจำนวนทันที</span></span></span></span></h2>
-                    <h2 style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        <span style="font-family: Verdana; "><span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); ">2.</span></span></span></span><span style="font-family: 'Comic Sans MS'; "><span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); ">&nbsp;รับประกันความสมบูรณ์ของพระเครื่อง
-                                        โดยจะไม่มีการอุดซ่อม เติม แต่ง
-                                        หรือศัลยกรรมใดๆทั้งสิ้น</span></span></span></span></h2>
-                    <h2 style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        <span style="font-family: Verdana; "><span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); ">3.</span></span></span></span><span style="font-family: 'Comic Sans MS'; "><span style="color: rgb(255, 0, 0); "><span style="font-size: medium; "><span style="color: rgb(192, 192, 192); ">
-                                        รับซื้อคืนพระที่เช่าไปทุกองค์ ด้วยเงินสด ตลอดเวลา<br>
-                                        ขายคืนหัก <span style="font-family: Verdana; ">20%</span><span style="font-family: Arial; "> ,</span>
-                                        เอาพระองค์เดิมมาแลกองค์ใหม่ไม่หักซักบาท (โดยพระต้องอยู่ในสภาพเดิม
-                                        และอ้างอิงราคาในวงการขณะนั้น)</span></span></span></span></h2>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        &nbsp;</p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        &nbsp;</p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px;">
-                        &nbsp;</p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        <span style="font-size:22px;"><span style="color: rgb(255, 0, 0);"><span style="font-family: 'Comic Sans MS';">ผมเป็นนักสะสมพระเครื่อง ด้วยความรักในพุทธศิลป์
-                                    และความศรัทธาในพุทธคุณ</span></span></span></p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        <span style="font-size:22px;"><span style="color: rgb(255, 0, 0);"><span style="font-family: 'Comic Sans MS';">ดังนั้นเรื่องเงินไม่ใช่เรื่องใหญ่
-                                    เรื่องความพอใจ ตรงไปตรงมาเป็นสิ่งสำคัญครับ </span></span></span></p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        &nbsp;</p>
-                    <p style="text-align: center;">
-                        <span style="color:#d3d3d3;">
-                            <font face="Comic Sans MS"><span style="font-size: 22px;">"พระเครื่องในร้าน เอก มายน์เวิร์ล
-                                    ที่ทุกๆท่านได้ชมอยู่นี้ ผมพิจารณาคัดเลือกมาให้แล้ว ตรวจสอบ เช็คความถูกต้องด้วยตัวเอง
-                                    และจากท่านอาจารย์ผู้รู้มาแล้วทั้งสิ้น ผมจะไม่มีวันนำพระปลอม แต่ง เติม บิ้วท์
-                                    หรือพระที่ไม่ใช่ที่นิยมมาไว้ที่ร้านอย่างแน่นอน เช่าไปแล้ว นอนหลับสบาย ไม่ต้องฝันร้าย
-                                    ไม่มีเอ๊ะ ไม่มีอ๊ะ แท้ตามมาตรฐานของวงการ แท้ทั่วไทย แท้ทั่วโลก
-                                    ท่านใดดูพระไม่เป็นไม่ใช่ปัญหาครับ ผมขอรับประกันพระทุกองค์ของผมตลอดชีวิตครับ"</span>
-                            </font>
-                        </span></p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        &nbsp;</p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        &nbsp;</p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        &nbsp;</p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        <span style="font-size:26px;"><span style="color: rgb(255, 255, 0);"><span style="font-family: 'Comic Sans MS';">**ต้องการสอบถาม ซื้อ-ขาย-แลก-เปลี่ยน
-                                    สามารถโทรสอบถามได้ทุกวันครับ**</span></span></span></p>
-                    <p style="font-family: Calibri, sans-serif; font-size: 16px; text-align: center;">
-                        <span style="color:#ff0000;"><span style="font-family: 'Comic Sans MS'; font-size: 26px;">โทรด่วน &nbsp; <strong><span style="font-size:36px;">080-479-8999</span></strong></span></span></p>
-                </div>
-            </div>
-        </div>
-        <a href="javascript:void(0)" onclick="toggleAnnounce()" class="card-footer d-block link-light shadow-sm text-center text-decoration-none w-100" style="background-color: rgba(0,0,0,0.25);"></a>
-    </section>
+<article class="col-md">
 
     <section class="mb-5">
         <header class="section-heading mt-จ heading-line heading-line-high d-flex [align-items-center] justify-content-between">

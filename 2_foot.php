@@ -495,15 +495,15 @@
                 <h5 class="text-center"><span class="badge bg-warning text-body shadow-sm" style="background-image: linear-gradient(140deg, rgba(0,0,0,0.25), rgba(255,255,255,0.25));">Gold</span></h5>
             </div>
             <nav class="navbar flex-fill align-items-start p-0">
-                <ul class="navbar-nav w-100 mb-auto">
-                    <li class="nav-item"><a href="./" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-home mr-2"></i>หน้าแรก</a></li>
-                    <li class="nav-item"><a href="./shop.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-store mr-2"></i>ร้านค้า</a></li>
-                    <li class="nav-item"><a href="./news.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-newspaper mr-2"></i>ข่าวสาร</a></li>
-                    <li class="nav-item"><a href="./rules.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-exclamation-circle mr-2"></i>กฎระเบียบ</a></li>
-                    <li class="nav-item"><a href="./contact.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5"><i class="fas fa-phone mr-2"></i>ติดต่อ</a></li>
+                <ul class="navbar-nav w-100 mb-auto justify-content-center">
+                    <li class="nav-item"><a href="./" class="nav-link link-light mb-0 py-3 px-4 px-sm-5">หน้าแรก</a></li>
+                    <li class="nav-item"><a href="./shop.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5">ร้านค้า</a></li>
+                    <li class="nav-item"><a href="./news.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5">ข่าวสาร</a></li>
+                    <li class="nav-item"><a href="./rules.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5">กฎระเบียบ</a></li>
+                    <li class="nav-item"><a href="./contact.php" class="nav-link link-light mb-0 py-3 px-4 px-sm-5">ติดต่อ</a></li>
                 </ul>
                 <ul class="navbar-nav w-100 mt-auto">
-                    <li class="nav-item"><a href="#" class="nav-link btn btn-danger mb-0 px-4 px-sm-5"><i class="fas fa-sign-out-alt mr-2"></i>ออกจากระบบ</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link btn btn-danger rounded-0 mb-0 px-4 px-sm-5"><i class="fas fa-sign-out-alt mr-2"></i>ออกจากระบบ</a></li>
                 </ul>
             </nav>
         </div>

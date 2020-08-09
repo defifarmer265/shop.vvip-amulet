@@ -4,7 +4,7 @@
             <h1 class="navbar-brand my-2">VVIP-Amulet Shop</h1>
         </div>
         <div class="ml-auto">
-            <button class="navbar-toggler border-0 shadow-none" onclick="document.addEventListener('click', closeNavMenu);" type="button" data-toggle="collapse" data-target="#main-nav">
+            <button class="navbar-toggler border-0 shadow-none" onclick="document.body.addEventListener('click', closeNavMenu);" type="button" data-toggle="collapse" data-target="#main-nav">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>

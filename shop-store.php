@@ -27,6 +27,8 @@ require_once __DIR__ . '/Tool/Connect.php';
 require_once __DIR__ . '/Tool/function.php';
 
 require_once __DIR__ . '/1_head.php';
+
+$dummyCategories = ["พระบูชา", "พระกรุ", "เหรียญพระพุทธ", "พระคณาจารย์", "พระสมเด็จ", "พระปิดตา", "พระกริ่ง", "พระนางพญา", "พระขุนแผน", "แม่นางกวัก", "พระสังกัจจายน์", "พระพุทธชินราช", "กวนอิม", "พระพรหม", "พระหลวงปู่ทวด", "หลวงพ่อคูณ", "ฤาษี", "กุมารทอง", "เครื่องรางทั่วไป", "ผ้ายันต์-ตะกรุด", "สีผึ้ง", "จตุคามรามเทพ", "หนังสืออุปกรณ์พระ", "หลวงปู่นน"];
 ?>
 
 <body class="bg-darker text-white">
@@ -88,16 +90,18 @@ require_once __DIR__ . '/1_head.php';
                         <li class="nav-item">
                             <a href="<?=$pageHeader['url']?>?page=products" class="nav-link p-3 link-light <?=$page === 'products' ? 'active' : ''?>">สินค้าทั้งหมด</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?=$pageHeader['url']?>?page=payment" class="nav-link p-3 link-light <?=$page === 'payment' ? 'active' : ''?>">การชำระเงิน</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>
 
             <?php 
-                if ($page === 'index')  include __DIR__.'/store/__storeIndex.php';
-                if ($page === 'info')   include __DIR__.'/store/__storeInfo.php';
+                if ($page === 'index') include __DIR__.'/store/__storeIndex.php';
+                if ($page === 'info') include __DIR__.'/store/__storeInfo.php';
+                if ($page === 'announce') include __DIR__.'/store/__storeAnnounce.php';
+                if ($page === 'products') include __DIR__.'/store/__storeProducts.php';
             ?>
 
         </section>
