@@ -10,6 +10,9 @@
 </footer>
 
 <footer id="shopping-tab" class="position-fixed d-md-table" style="bottom: 0; box-shadow: 0 -5px 10px rgba(0,0,0,0.1);">
+    <span class="hidden-chevron text-dark py-3 rounded-left align-items-center justify-content-center">
+        <i class="fas fa-chevron-left"></i>
+    </span>
     <nav class="navbar py-0 bg-white">
         <ul class="navbar-nav flex-row row gx-0 flex-lg-column-reverse">
             <li class="nav-item col">
@@ -514,7 +517,7 @@
 <!-- Popper.js first, then Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" defer data-search-pseudo-elements integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
 <script>
     function chooseRegisterLevel() {
         const select = event.target;

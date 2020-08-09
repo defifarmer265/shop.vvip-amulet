@@ -61,7 +61,7 @@ require_once __DIR__.'/1_head.php';
                         $colors = ['ff0', '1a0', 'd21', 'fff', '09a', 'ff00ff', '00d5ff', 'c8ff00'];
                         for ($i = 1; $i <= 20; $i++) :
                         ?>
-                            <a href="#" class="col-auto d-inline-block">
+                            <a href="./shop-store.php" class="col-auto d-inline-block">
                                 <img src="//dummyimage.com/100x100/<?= $colors[array_rand($colors)] ?>" class="rounded-circle" style="border: 3px solid white;" width="55" height="55">
                             </a>
                         <?php endfor; ?>
@@ -117,7 +117,7 @@ require_once __DIR__.'/1_head.php';
                         </div>
                         <a href="./news.php" class="title-section btn btn-link bg-darker align-items-center d-flex mb-2 text-light text-decoration-none">ดูทั้งหมด</a>
                     </header>
-                    <div class="list-group list-group-flush" style="background-color: rgba(0,0,0,0.25);">
+                    <div class="list-group list-group-flush rounded-lg shadow-sm" style="background-color: rgba(0,0,0,0.25);">
                         <a href="#" class="py-3 list-group-item border-darker list-group-item border-darker-action bg-transparent link-light d-flex">
                             <div class="mr-3">
                                 <img src="//dummyimage.com/200x300" class="hover-popup" alt="" style="width: 100px; height: 100px;">
