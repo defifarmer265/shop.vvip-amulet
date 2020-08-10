@@ -1,6 +1,6 @@
 <nav id="menu" class="navbar py-0 navbar-expand-sm navbar-dark sticky-top" data-old-style="background-color: rgba(0,0,0,0.25);" style="z-index: 1022; height: 57px; background: linear-gradient(170deg, #1d2023, #3b4046);">
     <div class="container-xl position-relative">
-        <a href="./" class="text-decoration-none link-light d-flex d-sm-none">
+        <a href="/" class="text-decoration-none link-light d-flex d-sm-none">
             <div class="mr-2 my-auto">
                 <img src="//dummyimage.com/500x500" alt="Logo" class="rounded-circle" style="width: 40px;max-width: 90px;">
             </div>
@@ -23,11 +23,12 @@
                         </h3>
                     </header>
                 </li>
-                <li class="nav-item"><a href="./" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'index.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-home mr-2"></i>หน้าแรก</a></li>
-                <li class="nav-item"><a href="./shop.php" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'shop.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-store mr-2"></i>ร้านค้า</a></li>
-                <li class="nav-item"><a href="./news.php" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'news.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-newspaper mr-2"></i>ข่าวสาร</a></li>
-                <li class="nav-item"><a href="./rules.php" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'rules.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-exclamation-circle mr-2"></i>กฎระเบียบ</a></li>
-                <li class="nav-item"><a href="./contact.php" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'contact.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-phone mr-2"></i>ติดต่อ</a></li>
+                <li class="nav-item"><a href="/" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'index.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-home mr-2"></i>หน้าแรก</a></li>
+                <li class="nav-item"><a href="/new-products" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'new-products.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-box mr-2"></i>สินค้าใหม่</a></li>
+                <li class="nav-item"><a href="/shops" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'shops.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-store mr-2"></i>ร้านค้า</a></li>
+                <li class="nav-item"><a href="/news" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'news.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-newspaper mr-2"></i>ข่าวสาร</a></li>
+                <li class="nav-item"><a href="/rules" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'rules.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-exclamation-circle mr-2"></i>กฎระเบียบ</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link h5 mb-0 p-3 <?= $pageHeader['url'] === 'contact.php' ? 'active bg-gradient' : '' ?>"><i class="fas fa-phone mr-2"></i>ติดต่อ</a></li>
             </ul>
             <ul class="navbar-nav col-12 col-sm-auto mx-auto">
                 <li class="nav-item">

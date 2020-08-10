@@ -20,8 +20,6 @@ $pageHeader = [
     ]
 ];
 
-$page = $_GET['page'] ?? 'index';
-
 session_start();
 require_once __DIR__ . '/Tool/Connect.php';
 require_once __DIR__ . '/Tool/function.php';
@@ -79,26 +77,26 @@ $dummyCategories = ["พระบูชา", "พระกรุ", "เหรี
                 <nav id="store-nav" class="border-bottom border-dark border-top flex-nowrap navbar navbar-expand p-0 text-nowrap" style="margin: 0 -15px;">
                     <ul class="mx-auto navbar-nav overflow-auto">
                         <li class="nav-item">
-                            <a href="<?=$pageHeader['url']?>?page=index" class="nav-link p-3 link-light <?=$page === 'index' ? 'active' : ''?>">หน้าหลัก</a>
+                            <a href="/shop/<?=$shopName?>/home" class="nav-link p-3 link-light <?=$page === 'home' ? 'active' : ''?>">หน้าหลัก</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=$pageHeader['url']?>?page=info" class="nav-link p-3 link-light <?=$page === 'info' ? 'active' : ''?>">ข้อมูลร้านค้า</a>
+                            <a href="/shop/<?=$shopName?>/info" class="nav-link p-3 link-light <?=$page === 'info' ? 'active' : ''?>">ข้อมูลร้านค้า</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=$pageHeader['url']?>?page=announce" class="nav-link p-3 link-light <?=$page === 'announce' ? 'active' : ''?>">ประกาศร้านค้า</a>
+                            <a href="/shop/<?=$shopName?>/announce" class="nav-link p-3 link-light <?=$page === 'announce' ? 'active' : ''?>">ประกาศร้านค้า</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=$pageHeader['url']?>?page=products" class="nav-link p-3 link-light <?=$page === 'products' ? 'active' : ''?>">สินค้าทั้งหมด</a>
+                            <a href="/shop/<?=$shopName?>/products" class="nav-link p-3 link-light <?=$page === 'products' ? 'active' : ''?>">สินค้าทั้งหมด</a>
                         </li>
                         <!-- <li class="nav-item">
-                            <a href="<?=$pageHeader['url']?>?page=payment" class="nav-link p-3 link-light <?=$page === 'payment' ? 'active' : ''?>">การชำระเงิน</a>
+                            <a href="/shop/<?=$shopName?>/payment" class="nav-link p-3 link-light <?=$page === 'payment' ? 'active' : ''?>">การชำระเงิน</a>
                         </li> -->
                     </ul>
                 </nav>
             </div>
 
             <?php 
-                if ($page === 'index') include __DIR__.'/store/__storeIndex.php';
+                if ($page === 'home') include __DIR__.'/store/__storeIndex.php';
                 if ($page === 'info') include __DIR__.'/store/__storeInfo.php';
                 if ($page === 'announce') include __DIR__.'/store/__storeAnnounce.php';
                 if ($page === 'products') include __DIR__.'/store/__storeProducts.php';
